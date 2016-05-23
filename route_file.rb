@@ -16,6 +16,7 @@ end
 
 get '/mkdir' do
 	erb :mkdir
+	#`man mkdir`
 end
 
 get '/touch' do
@@ -25,5 +26,14 @@ end
 get '/mv' do
 	erb :mv
 end
+
+get '/search' do
+	erb :search
+end
+
+post '/search' do
+	`man #{params[:search]} | col -b`
+end
+
 
 
